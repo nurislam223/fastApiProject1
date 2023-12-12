@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field
 app = FastAPI()
 
 ratings = [
-    {"comic_id": 1, "user_id": 1, "value": 1 },
-    {"comic_id": 1, "user_id": 2, "value": 2 },
-    {"comic_id": 1, "user_id": 3, "value": 3 },
+    {"comic_id": 1, "user_id": 1, "value": 2 },
+    {"comic_id": 1, "user_id": 2, "value": 3 },
+    {"comic_id": 1, "user_id": 3, "value": 4 },
     {"comic_id": 2, "user_id": 1, "value": 1},
-    {"comic_id": 2, "user_id": 2, "value": 2},
-    {"comic_id": 2, "user_id": 3, "value": 3},
-    {"comic_id": 3, "user_id": 1, "value": 1 },
-    {"comic_id": 3, "user_id": 2, "value": 2 },
-    {"comic_id": 3, "user_id": 3, "value": 3 }
+    {"comic_id": 2, "user_id": 2, "value": 5},
+    {"comic_id": 2, "user_id": 3, "value": 1},
+    {"comic_id": 3, "user_id": 1, "value": 3 },
+    {"comic_id": 3, "user_id": 2, "value": 4 },
+    {"comic_id": 3, "user_id": 3, "value": 2 }
 ]
 
 

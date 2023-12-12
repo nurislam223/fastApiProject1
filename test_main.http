@@ -1,9 +1,13 @@
 
 GET http://127.0.0.1:8000/api/comics/4/rating/
 Accept: application/json
-
 ###
-
+GET http://127.0.0.1:8000/api/comics/2/rating/
+Accept: application/json
+###
+GET http://127.0.0.1:8000/api/comics/1/rating/
+Accept: application/json
+###
 POST http://127.0.0.1:8000/api/ratings/
 Content-Type: application/json
 
@@ -34,3 +38,5 @@ Content-Type: application/json
 "user_id": 1,
 "value": 3
 }
+
+###
