@@ -1,0 +1,37 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/api/comics/4/rating/
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/api/ratings/
+Content-Type: application/json
+
+{
+"comic_id": 4,
+"user_id": 2,
+"value": 3
+}
+
+###
+
+POST http://127.0.0.1:8000/api/ratings/
+Content-Type: application/json
+
+{
+"comic_id": 4,
+"user_id": 2,
+"value": 4
+}
+
+###
+
+POST http://127.0.0.1:8000/api/ratings/
+Content-Type: application/json
+
+{
+"comic_id": 4,
+"user_id": 1,
+"value": 3
+}
