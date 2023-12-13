@@ -4,15 +4,15 @@ from pydantic import BaseModel, Field
 app = FastAPI()
 
 ratings = [
-    {"comic_id": 1, "user_id": 1, "value": 2 },
-    {"comic_id": 1, "user_id": 2, "value": 3 },
-    {"comic_id": 1, "user_id": 3, "value": 4 },
+    {"comic_id": 1, "user_id": 1, "value": 2},
+    {"comic_id": 1, "user_id": 2, "value": 3},
+    {"comic_id": 1, "user_id": 3, "value": 4},
     {"comic_id": 2, "user_id": 1, "value": 1},
     {"comic_id": 2, "user_id": 2, "value": 5},
     {"comic_id": 2, "user_id": 3, "value": 1},
-    {"comic_id": 3, "user_id": 1, "value": 3 },
-    {"comic_id": 3, "user_id": 2, "value": 4 },
-    {"comic_id": 3, "user_id": 3, "value": 2 }
+    {"comic_id": 3, "user_id": 1, "value": 3},
+    {"comic_id": 3, "user_id": 2, "value": 5},
+    {"comic_id": 3, "user_id": 3, "value": 2}
 ]
 
 
@@ -36,7 +36,8 @@ class Rating(BaseModel):
 
 @app.post("/api/ratings/")
 async def change_rating(data: Rating):
-    user_rating = [r["value"] for r in ratings if r["user_id"] == data.user_id and r["comic_id"] == data.comic_id]
+    user_rating = [user["value"] for user in ratings if user["user_id"] == data.user_id
+                   and user["comic_id"] == data.comic_id]
     if len(user_rating) >= 1:
         for i in ratings:
             if i["user_id"] == data.user_id:
@@ -60,10 +61,3 @@ async def get_rating(comic_id: int):
         return {"status": 200, "data": "Еще никто не оценил"}
     else:
         return {"status": 200, "data": avg/summ}
-
-
-
-
-
-
-
